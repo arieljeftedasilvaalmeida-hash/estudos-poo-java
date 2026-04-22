@@ -183,38 +183,13 @@ public double quadrado(double x) {
 
 ---
 
-## VI. Construtores
+## VI. Vetores em POO (Java)
 
-Métodos especiais executados automaticamente ao criar um objeto.
+- Armazenam **referências para objetos**, não os objetos diretamente  
+- Precisam de **instanciação em cada posição** (`new`)  
+- Tamanho definido na criação  
+- Acesso por índice (`vetor[i]`)  
 
-### Características:
-- Mesmo nome da classe  
-- Sem retorno  
-- Inicializam atributos  
-- Chamados com new  
-
----
-
-### Exemplo:
-class Circulo {
-    float raio;
-
-    public Circulo(float raio) {
-        this.raio = raio;
-    }
-}
-
----
-
-### Uso:
-Circulo circulo1 = new Circulo(10);
-
----
-
-### Ideia principal:
-O construtor cria o objeto já inicializado.
-
----
-
-## ✔ Conclusão
-Construtores tornam a criação de objetos mais automática, organizada e segura.
+```java
+Classe[] v = new Classe[3];
+v[0] = new Classe();
