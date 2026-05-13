@@ -1,55 +1,57 @@
-# 📘 Estudos de POO (Programação Orientada a Objetos)
+# 📘 Resumo Completo de POO (Programação Orientada a Objetos)
+
+A **Programação Orientada a Objetos (POO)** é uma forma de programar baseada em objetos do mundo real, como pessoas, carros, celulares, animais e contas bancárias.
+
+A ideia principal é organizar o código de forma mais simples, reutilizável e fácil de manter.
 
 ---
 
-## I. Abstração
+# I. Abstração
 
-É o conceito de focar só no que é importante de um objeto, ignorando detalhes desnecessários para simplificar o sistema.
+A **abstração** consiste em mostrar apenas o que é importante de um objeto e esconder os detalhes complicados.
 
-### Exemplos:
-- **Carro:** você usa volante, freio e acelerador sem saber como o motor funciona por dentro.
-- **Celular:** você usa apps e botões sem entender hardware ou código interno.
+## Exemplos do mundo real
 
-👉 Na programação, isso é feito com **classes**, que representam objetos do mundo real com apenas suas características essenciais.
+- Você dirige um carro usando volante, freio e acelerador, sem precisar entender o motor.
+- Você usa um celular sem conhecer o código interno dele.
 
----
-
-## II. Classes
-
-POO organiza tudo em **classes**, que reúnem dados e funções juntas.
-
-### Exemplo:
-- Em vez de funções separadas para uma pessoa, cria-se a classe `Pessoa`.
-
-### Classe:
-É um “molde” de um objeto.
-
-### Exemplo:
-- Classe `Pessoa` = modelo de pessoas.
+👉 Na programação fazemos isso usando **classes**, que representam apenas as características essenciais dos objetos.
 
 ---
 
-### Atributos:
-Características da classe (dados):
+# II. Classes
 
-- nome  
-- cor  
-- altura  
-- peso  
-- sexo  
+As **classes** são os moldes dos objetos.
 
----
-
-### Métodos:
-Ações da classe:
-
-- falar()  
-- andar()  
-- comer()  
+Elas agrupam:
+- atributos → características
+- métodos → ações
 
 ---
 
-### Exemplo em Java:
+## Exemplo: Classe Pessoa
+
+Uma pessoa possui características e comportamentos.
+
+### Atributos (dados)
+
+- nome
+- cor
+- altura
+- peso
+- sexo
+
+### Métodos (ações)
+
+- falar()
+- andar()
+- comer()
+
+---
+
+## Exemplo em Java
+
+```java
 class Pessoa {
     String nome;
     String cor;
@@ -57,64 +59,84 @@ class Pessoa {
     float peso;
     char sexo;
 }
+```
 
 ---
 
-## III. Métodos
+# III. Métodos
 
-São as ações que um objeto pode realizar (comportamentos).
+Os **métodos** representam as ações que o objeto pode executar.
 
-### Exemplo:
-Na classe Pessoa:
+## Exemplo
 
-- comer  
-- andar  
-- correr  
-- falar  
-- pensar  
-- sorrir  
-- reagir  
+Uma pessoa pode:
+- comer
+- andar
+- correr
+- falar
+- pensar
+- sorrir
 
 ---
 
-### Em Java:
+## Exemplo em Java
+
+```java
 public class Pessoa {
+
     String nome, cor;
     float altura, peso;
     char sexo;
 
     public void comer() {}
+
     public void andar() {}
+
     public void correr() {}
+
     public void falar() {}
+
     public void pensar() {}
+
     public void sorrir() {}
+
     public void reagir() {}
 }
+```
 
 ---
 
-## IV. Instância
+# IV. Instância (Objeto)
 
-É quando você cria um objeto a partir de uma classe.
+Uma **instância** é um objeto criado a partir de uma classe.
 
-### Conceito:
-- Classe = modelo
-- Instância = objeto real
+## Conceito
 
-### Exemplo:
-- Classe: Pessoa
-- Instâncias: Pedro, Marta, Jony
+- Classe = molde
+- Objeto = elemento real criado a partir do molde
 
----
+## Exemplo
 
-### Processo:
+Classe:
+```java
+Pessoa
+```
+
+Objetos:
+- Pedro
+- Marta
+- Jony
+
+## Criando um objeto
+
+```java
 Pessoa pessoa1;
 pessoa1 = new Pessoa();
+```
 
----
+## Usando o objeto
 
-### Usando o objeto:
+```java
 pessoa1.nome = "Pedro";
 pessoa1.altura = 1.95f;
 pessoa1.peso = 95f;
@@ -123,24 +145,148 @@ pessoa1.sexo = 'M';
 pessoa1.andar();
 pessoa1.correr();
 pessoa1.reagir();
+```
 
 ---
 
-## V. POO – Exemplo Círculo
+# V. Construtores
 
-### Classe Círculo
+Os **construtores** são métodos especiais executados automaticamente quando o objeto é criado.
 
-- Atributo: raio
+Eles servem para inicializar os atributos.
 
-### Métodos:
-- diametro() → 2 × raio  
-- area() → π × raio²  
-- comprimento() → 2 × π × raio  
+## Características
 
----
+- têm o mesmo nome da classe;
+- não possuem `return`;
+- executam automaticamente.
 
-### Exemplo em Java:
+## Exemplo
+
+```java
 class Circulo {
+
+    float raio;
+
+    public Circulo(float raio) {
+        this.raio = raio;
+    }
+}
+```
+
+Criando o objeto:
+
+```java
+Circulo c = new Circulo(10);
+```
+
+---
+
+# VI. Encapsulamento
+
+O **encapsulamento** protege os dados do objeto.
+
+Usamos `private` para impedir acesso direto aos atributos.
+
+## Exemplo
+
+```java
+private float raio;
+```
+
+Métodos de acesso:
+
+```java
+public void setRaio(float raio) {
+    this.raio = raio;
+}
+
+public float getRaio() {
+    return this.raio;
+}
+```
+
+---
+
+# VII. Herança
+
+A **herança** permite criar classes novas reaproveitando características de outra classe.
+
+## Exemplo
+
+```java
+class Retangulo {
+    float ladoA;
+    float ladoB;
+}
+```
+
+```java
+class Paralelepipedo extends Retangulo {
+    float altura;
+}
+```
+
+---
+
+# VIII. Polimorfismo
+
+Polimorfismo significa:
+> “muitas formas”.
+
+O mesmo método pode funcionar de maneiras diferentes dependendo do objeto.
+
+## Exemplo
+
+```java
+double area()
+```
+
+Cada classe implementa de sua forma.
+
+---
+
+# IX. Sobrecarga (Overloading)
+
+A sobrecarga acontece quando criamos métodos com o mesmo nome, mas parâmetros diferentes.
+
+## Exemplo
+
+```java
+public int quadrado(int x) {
+    return x * x;
+}
+```
+
+```java
+public double quadrado(double x) {
+    return x * x;
+}
+```
+
+---
+
+# X. Classe Círculo (Exemplo Completo)
+
+## Fórmulas
+
+Diâmetro:
+
+d = 2r
+
+Área:
+
+A = πr²
+
+Comprimento:
+
+C = 2πr
+
+## Código em Java
+
+```java
+class Circulo {
+
     float raio;
     float x, y;
 
@@ -156,40 +302,65 @@ class Circulo {
         return 2 * Math.PI * this.raio;
     }
 }
+```
 
 ---
 
-### Instanciando:
-Circulo circulo1 = new Circulo();
-circulo1.raio = 9f;
+# XI. Vetores em POO
 
----
+Vetores podem armazenar objetos.
 
-### Usando métodos:
-System.out.println(circulo1.diametro());
-System.out.println(circulo1.area());
-System.out.println(circulo1.comprimento());
-
----
-
-### Overloading (Sobrecarga):
-public int quadrado(int x) {
-    return x * x;
-}
-
-public double quadrado(double x) {
-    return x * x;
-}
-
----
-
-## VI. Vetores em POO (Java)
-
-- Armazenam **referências para objetos**, não os objetos diretamente  
-- Precisam de **instanciação em cada posição** (`new`)  
-- Tamanho definido na criação  
-- Acesso por índice (`vetor[i]`)  
+## Exemplo
 
 ```java
 Classe[] v = new Classe[3];
+
 v[0] = new Classe();
+```
+
+---
+
+# XII. Classes Abstratas
+
+Classes abstratas servem apenas como modelo.
+
+## Exemplo
+
+```java
+abstract class FiguraPlana {
+
+    abstract double area();
+
+    abstract double perimetro();
+}
+```
+
+---
+
+# XIII. Resumo Geral
+
+| Conceito | Função |
+|---|---|
+| Abstração | Mostrar apenas o essencial |
+| Classe | Molde do objeto |
+| Objeto/Instância | Elemento criado da classe |
+| Atributos | Características |
+| Métodos | Ações |
+| Construtor | Inicializa o objeto |
+| Encapsulamento | Protege os dados |
+| Herança | Reaproveita código |
+| Polimorfismo | Mesmo método, várias formas |
+| Sobrecarga | Mesmo método com parâmetros diferentes |
+| Classe Abstrata | Modelo para subclasses |
+
+---
+
+# XIV. Conclusão
+
+A Programação Orientada a Objetos ajuda a criar sistemas:
+- organizados;
+- reutilizáveis;
+- seguros;
+- fáceis de manter.
+
+Ela é uma das bases mais importantes da programação moderna.
